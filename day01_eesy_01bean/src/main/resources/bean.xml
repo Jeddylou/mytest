@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--创建bean的三种方式-->
+   <bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl" scope="prototype"
+   init-method="init" destroy-method="destroy"></bean>
+
+    <!--<bean id="instanceFactory" class="com.itheima.factory.InstanceFactory"></bean>-->
+    <!--<bean id="accountService" factory-bean="instanceFactory" factory-method="getAccountService"></bean>-->
+
+    <!--第三种方式 使用工厂中的静态方法创建对象（某个类的静态方法创建对象-->
+    <!--<bean id="accountService" class="com.itheima.factory.StaticFactory" factory-method="getAccountService"></bean>-->
+
+
+
+
+</beans>
+

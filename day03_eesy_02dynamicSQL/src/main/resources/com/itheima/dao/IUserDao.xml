@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itheima.dao.IUserDao">
+    <sql id="defaultUser">
+        select * from user
+    </sql>
+
+
+    <select id="findAll" resultType="com.itheima.domain.User">
+<include refid="defaultUser"></include>
+    </select>
+
+    <select id="findById" parameterType="Integer" resultType="com.itheima.domain.User">
+        select * from user where id = #{uid}
+    </select>
+
+    <select id="findByName" parameterType="string" resultType="com.itheima.domain.User">
+        select * from user where username like #{name}
+    </select>
+
+    <select id="findUserByVo" parameterType="com.itheima.domain.QueryVo" resultType="com.itheima.domain.User">
+        select * from user where username like #{user.username}
+    </select>
+
+    <select id="findUserByCondition"  resultType="com.itheima.domain.User" parameterType="user">
+        select * from user
+        <where>
+        <if test="username != null">
+           and username = #{username}
+        </if>
+        <if test="sex != null">
+            and sex = #{sex}
+        </if>
+        </where>
+    </select>
+
+
+    <select id="findUserInIds" resultType="com.itheima.domain.User" parameterType="queryvo">
+        <include refid="defaultUser"></include>
+        <where>
+            <if test="ids != null and ids.size() > 0"></if>
+              <foreach collection="ids" open="and id in (" close=")" item="id" separator=",">
+                  #{id}
+              </foreach>
+        </where>
+    </select>
+</mapper>

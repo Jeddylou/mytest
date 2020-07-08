@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/day13_servlet/day13_servlet.iml" filepath="$PROJECT_DIR$/day13_servlet/day13_servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day13tomcat/day13tomcat.iml" filepath="$PROJECT_DIR$/day13tomcat/day13tomcat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day14-servlet/day14-servlet.iml" filepath="$PROJECT_DIR$/day14-servlet/day14-servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb.iml" filepath="$PROJECT_DIR$/javaweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jsoup/jsoup.iml" filepath="$PROJECT_DIR$/jsoup/jsoup.iml" />
+    </modules>
+  </component>
+</project>

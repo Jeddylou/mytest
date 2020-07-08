@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery js转换</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+    <div id="div1">div1 </div>
+    <div id="div2">div2...</div>
+
+
+    <script>
+//通过js方式获取所有名称叫js的元素对象
+        var divs = document.getElementsByTagName("div");
+
+        var $divs = $("div");
+
+        alert(divs);
+        alert($divs);
+
+        //改变所有的标签体内容
+        for (var i = 0; i < divs.length; i++) {
+            $(divs[i]).html("ccc");
+        }
+
+        //使用jq方式
+        // $divs.html("bbb");
+
+        $divs[0].innerHTML = "ddd";
+        $divs.get(1).innerHTML = "ddd";
+
+
+
+
+    </script>
+</body>
+</html>

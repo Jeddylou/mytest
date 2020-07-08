@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var person = {"name":"张三", age:23, 'gender':true};
+
+        var ps = [{"name":"张三", "age":23, "gender":true},
+            {"name":"里斯", "age":23, "gender":true},
+            {"name":"王五", "age":23, "gender":true}
+        ];
+
+        // for(var key in person){
+        //     // alert(key);
+        //     alert(key + ":" + person[key])
+        // }
+
+        for (var i = 0; i < ps.length; i++) {
+            var p = ps[i];
+            for(var key in p){
+                alert(key + ":" + p[key])
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

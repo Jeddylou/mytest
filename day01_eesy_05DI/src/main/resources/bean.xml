@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--构造函数注入
+    使用的标签：constructor-arg
+    出现在bean标签的内部
+    标签中的属性-->
+   <!--<bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl">-->
+       <!--<constructor-arg name="name" value="test"></constructor-arg>-->
+       <!--<constructor-arg name="age" value="18" ></constructor-arg>-->
+       <!--<constructor-arg name="birthday" ref="now1" ></constructor-arg>-->
+   <!--</bean>-->
+
+    <!--<bean id="now1" class="java.util.Date"></bean>-->
+
+    <!--set方法注入-->
+    <bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl">
+        <property name="name" value="TEST"></property>
+        <property name="age" value="21"> </property>
+        <property name="birthday" ref="now"></property>
+     </bean>
+
+    <bean id="now" class="java.util.Date"></bean>
+
+    <!--复杂类型的注入-->
+    <bean id="accountService3" class="com.itheima.service.impl.AccountServiceImpl3">
+        <property name="myStrs" >
+            <array>
+                <value>AAA</value>
+                <value>BBB</value>
+                <value>CCC</value>
+            </array>
+        </property>
+
+        <property name="myList" >
+            <list>
+                <value>AAA</value>
+                <value>BBB</value>
+                <value>CCC</value>
+            </list>
+        </property>
+
+        <property name="mySet" >
+            <set>
+                <value>AAA</value>
+                <value>BBB</value>
+                <value>CCC</value>
+            </set>
+        </property>
+
+        <property name="myMap" >
+            <map>
+               <entry key="testA" value="AAA"></entry>
+                <entry key="testB">
+                    <value>888</value>
+                </entry>
+            </map>
+        </property>
+
+        <property name="myProps">
+            <props>
+                <prop key="testc">ccc</prop>
+            </props>
+        </property>
+
+
+    </bean>
+
+
+
+
+
+
+</beans>
+

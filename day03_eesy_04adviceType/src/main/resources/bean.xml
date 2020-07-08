@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl"></bean>
+
+    <bean id="logger" class="com.itheima.utils.Logger"></bean>
+    
+    <!--<aop:config>-->
+        <!--<aop:aspect id="logAdvice" ref="logger">-->
+            <!--<aop:before method="printLog" pointcut="execution(public void com.itheima.service.impl.AccountServiceImpl.saveAccount())"></aop:before>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+    <aop:config>
+        <aop:pointcut id="pt1" expression="execution(* com.itheima.service.impl.*.*(..))"></aop:pointcut>
+        <aop:aspect id="logAdvice" ref="logger">
+            <!--<aop:before method="beforePrintLog" pointcut-ref="pt1"></aop:before>-->
+            <!--<aop:after-returning method="afterReturningPrintLog" pointcut-ref="pt1"></aop:after-returning>-->
+            <!--<aop:after-throwing method="afterThrowingPrintLog" pointcut-ref="pt1"></aop:after-throwing>-->
+            <!--<aop:after method="afterPrintLog" pointcut-ref="pt1"></aop:after>-->
+
+            <aop:around method="aroundPrintLog" pointcut-ref="pt1"></aop:around>
+
+
+        </aop:aspect>
+    </aop:config>
+
+</beans>
